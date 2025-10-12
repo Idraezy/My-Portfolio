@@ -1,5 +1,5 @@
 import prof from '../../../assets/prof.jpg';
-import { BriefcaseBusiness } from "lucide-react";
+import { BriefcaseBusiness, DotIcon } from "lucide-react";
 import { motion } from "framer-motion";
 
 function Experience() {
@@ -58,6 +58,13 @@ function Experience() {
             </span>.  
             My focus is on creating user-friendly, visually appealing experiences that bring ideas to life.
           </p>
+          <br />
+          <p className="text-base sm:text-lg md:text-xl dark:text-gray-300 mb-2 text-gray-600 font-semibold">
+            <strong>2023 - Present</strong>
+          </p>
+          <p className='className="text-base sm:text-lg md:text-xl dark:text-gray-300 mb-2 text-gray-600 font-semibold'>CHAINDUSTRY</p>
+          <p className='className="text-xl sm:text-lg md:text-xl dark:text-gray-300 mb-2 text-gray-600 font-semibold'><DotIcon className='inline dark:text-orange-500'/>Intenship Role</p>
+
         </motion.div>
       </div>
     </div>

@@ -1,7 +1,8 @@
-import { useState, ChangeEvent } from 'react';
+import { useState, type ChangeEvent } from 'react';
 import FinalFooter from '../homepage/header/footer/FinalFooter';
 import Header from '../homepage/header/Header';
 import { Mail, MapPin, PhoneCall, UserRound, MessageSquare } from 'lucide-react';
+import React from 'react';
 
 interface FormData {
   name: string;
@@ -11,7 +12,7 @@ interface FormData {
 
 interface ContactProps {
   darkMode: boolean;
-  setDarkMode: (value: boolean) => void;
+  setDarkMode: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 function Contact({ darkMode, setDarkMode }: ContactProps) {
