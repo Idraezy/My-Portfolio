@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Sun, Moon, Grid } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import prof from "../../assets/prof.jpg"; // Update with your profile image path
 
 interface HeaderProps {
   darkMode: boolean;
@@ -10,28 +11,72 @@ interface HeaderProps {
 
 function Header({ darkMode, setDarkMode }: HeaderProps) {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [currentTime, setCurrentTime] = useState("");
+  const [dotColor, setDotColor] = useState("bg-orange-400");
   const location = useLocation();
+
+  // Update current time and determine dot color
+  useEffect(() => {
+    const updateTime = () => {
+      const now = new Date();
+      const hours = now.getHours();
+      const minutes = now.getMinutes();
+      const ampm = hours >= 12 ? "PM" : "AM";
+      const displayHours = hours % 12 || 12;
+      const formattedTime = `${displayHours}:${minutes.toString().padStart(2, "0")} ${ampm}`;
+      
+      setCurrentTime(formattedTime);
+
+      // Change dot color based on time (red: 12am-3:59am, green: 4am-11:59pm)
+      if (hours >= 0 && hours < 4) {
+        setDotColor("bg-red-500");
+      } else {
+        setDotColor("bg-orange-400");
+      }
+    };
+
+    updateTime();
+    const interval = setInterval(updateTime, 1000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <motion.header
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
-      className="flex justify-between items-center px-6 md:px-12 py-3 
+      className="flex justify-between items-center px-3 md:px-12 py-3 
                  bg-lightBg dark:bg-[#011C2A] text-lightText dark:text-darkText
                  fixed top-0 left-0 w-full z-50 transition-colors duration-300 bg-white/20 backdrop-blur-md dark:bg-[#001D2A]/30"
     >
-      {/* Logo */}
-      <motion.span
+      {/* Active Status Indicator - Left Side */}
+      <motion.div
         initial={{ opacity: 0, x: -30 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8, delay: 0.3 }}
-        className="text-2xl font-bold dark:text-orangeAccent text-[#001528] cursor-pointer"
+        className="flex flex-col items-center gap-2"
       >
-        Idraezy_
-      </motion.span>
+        <div className="relative w-16 h-10 md:w-10 md:h-10">
+          {/* Profile Image Circle */}
+          <img
+            src={prof}
+            alt="Profile"
+            className="w-full h-full rounded-full object-cover border-2 border-orange-400"
+          />
 
-      {/* Desktop Navigation */}
+          {/* Blinking Dot */}
+          <div
+            className={`absolute top-0 right-0 w-3 h-3 md:w-4 md:h-4 rounded-full ${dotColor} animate-pulse border-2 border-white shadow-lg`}
+          ></div>
+        </div>
+
+        {/* Current Time */}
+        <p className="text-xs md:text-sm font-semibold text-gray-300">
+          {currentTime}
+        </p>
+      </motion.div>
+
+      {/* Desktop Navigation - Center */}
       <motion.nav
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
