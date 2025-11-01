@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Sun, Moon, Grid } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import prof from "../../assets/prof.jpg"; // Update with your profile image path
+import prof from "../../assets/prof.jpg";
 
 interface HeaderProps {
   darkMode: boolean;
@@ -12,10 +12,9 @@ interface HeaderProps {
 function Header({ darkMode, setDarkMode }: HeaderProps) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [currentTime, setCurrentTime] = useState("");
-  const [dotColor, setDotColor] = useState("bg-orange-400");
   const location = useLocation();
 
-  // Update current time and determine dot color
+  // Update current time
   useEffect(() => {
     const updateTime = () => {
       const now = new Date();
@@ -26,13 +25,6 @@ function Header({ darkMode, setDarkMode }: HeaderProps) {
       const formattedTime = `${displayHours}:${minutes.toString().padStart(2, "0")} ${ampm}`;
       
       setCurrentTime(formattedTime);
-
-      // Change dot color based on time (red: 12am-3:59am, green: 4am-11:59pm)
-      if (hours >= 0 && hours < 4) {
-        setDotColor("bg-red-500");
-      } else {
-        setDotColor("bg-orange-400");
-      }
     };
 
     updateTime();
@@ -61,13 +53,54 @@ function Header({ darkMode, setDarkMode }: HeaderProps) {
           <img
             src={prof}
             alt="Profile"
-            className="w-full h-full rounded-full object-cover border-2 border-orange-400"
+            className="w-full h-full rounded-full object-cover border-1 "
           />
 
-          {/* Blinking Dot */}
-          <div
-            className={`absolute top-0 right-0 w-3 h-3 md:w-4 md:h-4 rounded-full ${dotColor} animate-pulse border-2 border-white shadow-lg`}
-          ></div>
+          {/* Animated Connection Dot with Ripple Effect */}
+          <div className="absolute top-0 right-0 w-3 h-3 md:w-3 md:h-3">
+            {/* Main Dot */}
+            <motion.div
+              animate={{
+                scale: [1, 1.2, 1],
+                opacity: [1, 0.8, 1],
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+              className="absolute inset-0 w-full h-full rounded-full bg-green-400 border-2 border-white shadow-lg"
+            />
+            
+            {/* Ripple Effect 1 */}
+            <motion.div
+              animate={{
+                scale: [1, 2, 2],
+                opacity: [0.7, 0, 0],
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeOut",
+              }}
+              className="absolute inset-0 w-full h-full rounded-full bg-green-400"
+            />
+            
+            {/* Ripple Effect 2 */}
+            <motion.div
+              animate={{
+                scale: [1, 2.5, 2.5],
+                opacity: [0.5, 0, 0],
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeOut",
+                delay: 0.3,
+              }}
+              className="absolute inset-0 w-full h-full rounded-full bg-green-400"
+            />
+          </div>
         </div>
 
         {/* Current Time */}
@@ -94,9 +127,16 @@ function Header({ darkMode, setDarkMode }: HeaderProps) {
           Home
         </Link>
 
-        <p className="cursor-pointer hover:text-orange-300 transition-colors">
+        <Link
+          to="/projects"
+          className={`cursor-pointer duration-300 transition-colors ${
+            location.pathname === "/projects"
+              ? "transition-colors underline decoration-4 decoration-orange-500"
+              : "hover:text-orange-300"
+          }`}
+        >
           My Projects
-        </p>
+        </Link>
 
         <Link
           to="/contact"
@@ -162,13 +202,18 @@ function Header({ darkMode, setDarkMode }: HeaderProps) {
               </motion.div>
             </Link>
 
-            <motion.div
-              whileHover={{ x: 5, color: "#fb923c" }}
-              className="px-5 py-2 cursor-pointer text-base"
-              onClick={() => setMenuOpen(false)}
-            >
-              My Projects
-            </motion.div>
+            <Link to="/projects" onClick={() => setMenuOpen(false)}>
+              <motion.div
+                whileHover={{ x: 5, color: "#fb923c" }}
+                className={`px-5 py-2 cursor-pointer text-base ${
+                  location.pathname === "/projects"
+                    ? "text-orange-400 font-semibold"
+                    : ""
+                }`}
+              >
+                My Projects
+              </motion.div>
+            </Link>
 
             <Link to="/contact" onClick={() => setMenuOpen(false)}>
               <motion.div

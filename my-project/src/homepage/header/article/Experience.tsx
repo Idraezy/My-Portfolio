@@ -64,6 +64,14 @@ function Experience() {
           </p>
           <p className='className="text-base sm:text-lg md:text-xl dark:text-gray-300 mb-2 text-gray-600 font-semibold'>CHAINDUSTRY</p>
           <p className='className="text-xl sm:text-lg md:text-xl dark:text-gray-300 mb-2 text-gray-600 font-semibold'><DotIcon className='inline dark:text-orange-500'/>Intenship Role</p>
+          <div>
+            <p className="text-base sm:text-lg md:text-xl dark:text-gray-300 mb-2 text-gray-600 font-semibold">
+            <strong>2025 - Present</strong>
+          </p>
+          <p className='className="text-base sm:text-lg md:text-xl dark:text-gray-300 mb-2 text-gray-600 font-semibold'>HNG</p>
+          <p className='className="text-xl sm:text-lg md:text-xl dark:text-gray-300 mb-2 text-gray-600 font-semibold'><DotIcon className='inline dark:text-orange-500'/>Intenship Role</p>
+
+          </div>
 
         </motion.div>
       </div>

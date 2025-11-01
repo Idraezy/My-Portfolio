@@ -97,7 +97,7 @@ You have a new message from your website:
                   value={formData.name}
                   placeholder="Name" 
                   onChange={handleChange}
-                  className="dark:bg-[#001D2A] bg-[#F9F9F9] p-3 pr-12 rounded-2xl border dark:border-orange-500 border-[#001528] w-full text-sm sm:text-base sm:p-4 sm:pr-14 focus:outline-none focus:ring-2 focus:ring-orange-400"
+                  className="dark:bg-[#002737] bg-[#F9F9F9] p-3 pr-12 rounded-2xl border dark:border-orange-500 border-[#001528] w-full text-sm sm:text-base sm:p-4 sm:pr-14 focus:outline-none focus:ring-2 focus:ring-orange-400"
                 />
                 <UserRound className="absolute right-4 top-1/2 -translate-y-1/2 text-black dark:text-orange-400 w-5 h-5 sm:w-6 sm:h-6" />
               </div>
@@ -110,7 +110,7 @@ You have a new message from your website:
                   value={formData.email}
                   placeholder="Email" 
                   onChange={handleChange}
-                  className="bg-[#F9F9F9] dark:bg-[#001D2A] p-3 pr-12 rounded-2xl border dark:border-orange-500 border-[#001528] w-full text-sm sm:text-base sm:p-4 sm:pr-14 focus:outline-none focus:ring-2 focus:ring-orange-400"
+                  className="bg-[#F9F9F9] dark:bg-[#002737] p-3 pr-12 rounded-2xl border dark:border-orange-500 border-[#001528] w-full text-sm sm:text-base sm:p-4 sm:pr-14 focus:outline-none focus:ring-2 focus:ring-orange-400"
                 />
                 <Mail className="absolute right-4 top-1/2 -translate-y-1/2 text-black dark:text-orange-400 w-5 h-5 sm:w-6 sm:h-6" />
               </div>
@@ -123,7 +123,7 @@ You have a new message from your website:
                   placeholder="Message"
                   onChange={handleChange} 
                   rows={6}
-                  className="bg-[#F9F9F9] dark:bg-[#001D2A] p-3 pr-12 rounded-2xl border dark:border-orange-500 border-[#001528] w-full text-sm sm:text-base sm:p-4 sm:pr-14 resize-none focus:outline-none focus:ring-2 focus:ring-orange-400 sm:rows-8 lg:rows-8"
+                  className="bg-[#F9F9F9] dark:bg-[#002737] p-3 pr-12 rounded-2xl border dark:border-orange-500 border-[#001528] w-full text-sm sm:text-base sm:p-4 sm:pr-14 resize-none focus:outline-none focus:ring-2 focus:ring-orange-400 sm:rows-8 lg:rows-8"
                 />
                 <MessageSquare className="absolute right-4 top-4 text-black dark:text-orange-400 w-5 h-5 sm:w-6 sm:h-6" />
               </div>

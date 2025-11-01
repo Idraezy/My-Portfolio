@@ -14,6 +14,8 @@ import Contact from './contactpage/Contact';
 import PersonalInfo from './homepage/header/article/PersonalInfo';
 import Experience from './homepage/header/article/Experience';
 import Skills from './homepage/header/article/Skills';
+import Projects from './projectpage/Projects';
+import ScrollToTop from './scrollToTop';
 
 function App() {
   const [darkMode, setDarkMode] = useState(true);
@@ -34,6 +36,7 @@ function App() {
 
   return (
     <Router>
+       <ScrollToTop />
       <div className="relative flex flex-col min-h-screen bg-[#F9F9F9] dark:bg-[#011C2A]
       text-lightText dark:text-darkText transition-colors duration-300">
 
@@ -72,6 +75,10 @@ function App() {
               <Route 
                 path="/contact" 
                 element={<Contact darkMode={darkMode} setDarkMode={setDarkMode} />} 
+              />
+              <Route 
+                path="/projects" 
+                element={<Projects darkMode={darkMode} setDarkMode={setDarkMode} />} 
               />
             </Routes>
           )}

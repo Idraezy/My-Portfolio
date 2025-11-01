@@ -35,7 +35,7 @@ function FinalFooter() {
             className="text-black hover:text-orange-400 px-2 cursor-pointer 
                        transition-all duration-300 ease-in-out hover:-translate-y-2 
                        dark:text-white dark:hover:text-orange-400
-                       sm:w-9 sm:h-9 sm:px-2 md:w-10 md:h-10 md:px-2.5 lg:w-12 lg:h-12 lg:px-3" strokeWidth={3}
+                       sm:w-9 sm:h-9 sm:px-2 md:w-10 md:h-10 md:px-2.5 lg:w-12 lg:h-12 lg:px-3" strokeWidth={2}
           />
         </motion.a>
 
@@ -53,7 +53,7 @@ function FinalFooter() {
             className="text-black hover:text-orange-400 px-2 cursor-pointer 
                        transition-all duration-300 ease-in-out hover:-translate-y-2 
                        dark:hover:text-orange-400 dark:text-white
-                       sm:w-9 sm:h-9 sm:px-2 md:w-10 md:h-10 md:px-2.5 lg:w-12 lg:h-12 lg:px-3" strokeWidth={3}
+                       sm:w-9 sm:h-9 sm:px-2 md:w-10 md:h-10 md:px-2.5 lg:w-12 lg:h-12 lg:px-3" strokeWidth={2}
           />
         </motion.a>
 
@@ -71,7 +71,7 @@ function FinalFooter() {
             className="text-black hover:text-orange-400 px-2 cursor-pointer 
                        transition-all duration-300 ease-in-out hover:-translate-y-2 
                        dark:hover:text-orange-400 dark:text-white
-                       sm:w-9 sm:h-9 sm:px-2 md:w-10 md:h-10 md:px-2.5 lg:w-12 lg:h-12 lg:px-3" strokeWidth={3}
+                       sm:w-9 sm:h-9 sm:px-2 md:w-10 md:h-10 md:px-2.5 lg:w-12 lg:h-12 lg:px-3" strokeWidth={2}
           />
         </motion.a>
 
@@ -89,7 +89,7 @@ function FinalFooter() {
             className="text-black hover:text-orange-400 px-2 cursor-pointer 
                        transition-all duration-300 ease-in-out hover:-translate-y-2 
                        dark:hover:text-orange-400 dark:text-white
-                       sm:w-9 sm:h-9 sm:px-2 md:w-10 md:h-10 md:px-2.5 lg:w-12 lg:h-12 lg:px-3" strokeWidth={3}
+                       sm:w-9 sm:h-9 sm:px-2 md:w-10 md:h-10 md:px-2.5 lg:w-12 lg:h-12 lg:px-3" strokeWidth={2}
           />
         </motion.a>
 
@@ -107,7 +107,7 @@ function FinalFooter() {
             className="text-black hover:text-orange-400 px-2 cursor-pointer 
                        transition-all duration-300 ease-in-out hover:-translate-y-2 
                        dark:hover:text-orange-400 dark:text-white
-                       sm:w-9 sm:h-9 sm:px-2 md:w-10 md:h-10 md:px-2.5 lg:w-12 lg:h-12 lg:px-3" strokeWidth={3}
+                       sm:w-9 sm:h-9 sm:px-2 md:w-10 md:h-10 md:px-2.5 lg:w-12 lg:h-12 lg:px-3" strokeWidth={2}
           />
         </motion.a>
 
@@ -125,7 +125,7 @@ function FinalFooter() {
             className="text-black hover:text-orange-400 px-2 cursor-pointer 
                        transition-all duration-300 ease-in-out hover:-translate-y-2 
                        dark:hover:text-orange-400 dark:text-white
-                       sm:w-9 sm:h-9 sm:px-2 md:w-10 md:h-10 md:px-2.5 lg:w-12 lg:h-12 lg:px-3" strokeWidth={3}
+                       sm:w-9 sm:h-9 sm:px-2 md:w-10 md:h-10 md:px-2.5 lg:w-12 lg:h-12 lg:px-3" strokeWidth={2}
           />
         </motion.a>
       </motion.div>

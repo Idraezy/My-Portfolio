@@ -137,10 +137,14 @@ export default function Section() {
                         font-semibold dark:hover:border-white
                        group transition-all hover:border-white dark:hover:text-white sm:p-3 sm:px-7 sm:text-base md:p-3 md:px-7 md:text-base lg:p-4 lg:px-9 lg:text-xl lg:transition-all lg:duration-300 lg:ease-in-out mb-14 text-black text-base "
           >
-            Resume <FileUser className="w-4 inline transition-transform duration-700 ease-in-out group-hover:animate-bounce sm:w-5 lg:w-6 lg:duration-700 " />
+            <a href="/Idara_Etim_Resume_Updated.pdf" target="_blank" rel="noopener noreferrer" >Resume </a>
+            <FileUser className="w-4 inline transition-transform duration-700 ease-in-out group-hover:animate-bounce sm:w-5 lg:w-6 lg:duration-700 " />
           </button>
         </motion.div>
       </motion.div>
     </motion.section>
   );
 }
+
+
+
