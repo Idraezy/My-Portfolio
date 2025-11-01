@@ -5,8 +5,8 @@ import { AnimatePresence } from "framer-motion";
 import Header from './homepage/header/Header';
 import Section from './homepage/header/section/Section';
 import Footer from './homepage/header/footer/Footer';
-import Preloader from './Preloader';
-import BackgroundAnimation from './Background';
+import Preloader from './settings/Preloader';
+import BackgroundAnimation from './settings/Background';
 import Article from './homepage/header/article/Article';
 import Conclusion from './homepage/header/article/Conclusion';
 import FinalFooter from './homepage/header/footer/FinalFooter';
@@ -15,7 +15,7 @@ import PersonalInfo from './homepage/header/article/PersonalInfo';
 import Experience from './homepage/header/article/Experience';
 import Skills from './homepage/header/article/Skills';
 import Projects from './projectpage/Projects';
-import ScrollToTop from './scrollToTop';
+import ScrollToTop from './settings/scrollToTop';
 
 function App() {
   const [darkMode, setDarkMode] = useState(true);
