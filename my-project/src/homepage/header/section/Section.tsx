@@ -48,7 +48,7 @@ export default function Section() {
 
   return (
     <motion.section
-      className="min-h-[72vh] bg-lightBg dark:bg-[#011C2A] text-lightText dark:text-darkText transition-colors duration-300"
+      className="min-h-[72vh] bg-lightBg dark:bg-[#011C2A] text-lightText dark:text-darkText transition-colors duration-300 mt-28"
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 1, ease: "easeOut" }}

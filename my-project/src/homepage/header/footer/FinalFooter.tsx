@@ -1,5 +1,6 @@
-import { Twitter, Linkedin, Facebook, Instagram, Github, Mail } from "lucide-react";
+import { Twitter, Linkedin, Facebook, Instagram, Github } from "lucide-react";
 import { motion } from "framer-motion";
+import { Whatsapp } from "iconsax-react";
 
 function FinalFooter() {
   return (
@@ -40,7 +41,7 @@ function FinalFooter() {
         </motion.a>
 
         <motion.a
-          href="mailto:idraezynoks@gmail.com"
+          href="https://wa.me/2347045256955"
           target="_blank"
           rel="noopener noreferrer"
           variants={{
@@ -48,8 +49,7 @@ function FinalFooter() {
             visible: { opacity: 1, y: 0 }
           }}
         >
-          <Mail
-            size={30}
+          <Whatsapp size="30" color="currentColor"  
             className="text-black hover:text-orange-400 px-2 cursor-pointer 
                        transition-all duration-300 ease-in-out hover:-translate-y-2 
                        dark:hover:text-orange-400 dark:text-white

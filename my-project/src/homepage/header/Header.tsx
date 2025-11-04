@@ -39,7 +39,8 @@ function Header({ darkMode, setDarkMode }: HeaderProps) {
       transition={{ duration: 0.8, ease: "easeOut" }}
       className="flex justify-between items-center px-3 md:px-12 py-3 
                  bg-lightBg dark:bg-[#011C2A] text-lightText dark:text-darkText
-                 fixed top-0 left-0 w-full z-50 transition-colors duration-300 bg-white/20 backdrop-blur-md dark:bg-[#001D2A]/30"
+                 fixed top-0 left-0 w-full z-50 transition-colors duration-300 bg-white/20 backdrop-blur-md dark:bg-[#001D2A]/30
+                 mb-4 md:mb-6"
     >
       {/* Active Status Indicator - Left Side */}
       <motion.div
@@ -48,16 +49,16 @@ function Header({ darkMode, setDarkMode }: HeaderProps) {
         transition={{ duration: 0.8, delay: 0.3 }}
         className="flex flex-col items-center gap-2"
       >
-        <div className="relative w-16 h-10 md:w-10 md:h-10">
+        <div className="relative w-10 h-10">
           {/* Profile Image Circle */}
           <img
             src={prof}
             alt="Profile"
-            className="w-full h-full rounded-full object-cover border-1 "
+            className="w-full h-full rounded-full object-cover border-1"
           />
 
           {/* Animated Connection Dot with Ripple Effect */}
-          <div className="absolute top-0 right-0 w-3 h-3 md:w-3 md:h-3">
+          <div className="absolute top-0 right-0 w-3 h-3">
             {/* Main Dot */}
             <motion.div
               animate={{
