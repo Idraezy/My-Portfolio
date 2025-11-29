@@ -43,7 +43,7 @@ const projects: Project[] = [
     technologies: ["Figma", "React","Typescript","Tailwind CSS", "Solidity"],
     category: "Blockchain",
     image: project2,
-    liveUrl: "https://my-nft-marketplace-flame.vercel.app/",
+    liveUrl: "https://nft-marketplace-22.vercel.app/",
     githubUrl: "#"
   },
   {
