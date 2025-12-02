@@ -55,8 +55,8 @@ const projects: Project[] = [
   //   "Drag-and-Drop File Upload",
   //   "Download Optimized Resume"
   //   ],
-  liveUrl: "https://ats-pro.vercel.app/",
-  githubUrl: "https://github.com/yourusername/ats-pro-checker",
+  liveUrl: "https://at-sify.vercel.app/",
+  githubUrl: "https://github.com/Idraezy/ATSify",
   },
 
   {
