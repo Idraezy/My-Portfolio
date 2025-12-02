@@ -9,6 +9,7 @@ import project1 from '../assets/project1.jpg'
 import project2 from '../assets/project2.jpg'
 import project3 from '../assets/project3.jpg'
 import project4 from '../assets/project4.jpg'
+import project5 from '../assets/project5.jpg'
 
 interface Project {
   id: number;
@@ -30,24 +31,46 @@ const projects: Project[] = [
     id: 1,
     title: "E-Commerce Platform",
     description: "A full-featured e-commerce platform with cart functionality, payment integration, and admin dashboard.",
-    technologies: ["Figma","React", "TypeScript", "Tailwind CSS"],
+    technologies: ["Figma","React", "TypeScript", "Tailwind CSS", "Framer-motion"],
     category: "Frontend",
     image: project1,
     liveUrl: "https://dali-m2rk.vercel.app/",
     githubUrl: "https://github.com/Idraezy/dali"
   },
   {
-    id: 2,
+  id: 2,
+  title: "ATS Pro - Resume & ATS Checker",
+  description: "A full-featured frontend application that analyzes resumes against job descriptions, calculates ATS scores, identifies missing keywords, and provides intelligent suggestions for resume optimization with real-time scoring predictions.",
+  technologies: ["React", "TypeScript", "Tailwind CSS", "Framer Motion", "LocalStorage"],
+  category: "Frontend",
+  image: project5,
+  // features: [
+  //   "ATS Score Analysis (0-100)",
+  //   "Keyword Extraction & Matching",
+  //   "Skills Match Percentage",
+  //   "Keyword Density Analysis",
+  //   "Smart Improvement Suggestions",
+  //   "Resume Score Forecasting",
+  //   "Dark/Light Theme Toggle",
+  //   "Drag-and-Drop File Upload",
+  //   "Download Optimized Resume"
+  //   ],
+  liveUrl: "https://ats-pro.vercel.app/",
+  githubUrl: "https://github.com/yourusername/ats-pro-checker",
+  },
+
+  {
+    id: 3,
     title: "NFT Marketplace",
     description: "Decentralized marketplace for trading NFTs with smart contract integration and wallet connectivity.",
-    technologies: ["Figma", "React","Typescript","Tailwind CSS", "Solidity"],
+    technologies: ["Figma", "React","Typescript","Tailwind CSS", "Solidity", "Framer-motion"],
     category: "Blockchain",
     image: project2,
     liveUrl: "https://nft-marketplace-22.vercel.app/",
-    githubUrl: "#"
+    githubUrl: "https://github.com/Idraezy/NFT-MARKETPLACE-22"
   },
   {
-    id: 3,
+    id: 4,
     title: "Brand Identity Design",
     description: "Complete brand identity package including logo, color palette, and marketing materials.",
     technologies: ["Figma", "HTML", "Vanilla CSS", "Vanilla JavaScript"],
@@ -56,7 +79,7 @@ const projects: Project[] = [
     liveUrl: "#"
   },
   {
-    id: 4,
+    id: 5,
     title: "Task Management App",
     description: "Collaborative task management application with real-time updates and team features.",
     technologies: ["Figma", "HTML", "Vanilla CSS", "Vanilla JavaScript"],
@@ -65,25 +88,25 @@ const projects: Project[] = [
     liveUrl: "https://idraezy.github.io/profile-card/",
     githubUrl: "https://idraezy.github.io/profile-card/"
   },
-//   {
-//     id: 5,
-//     title: "DeFi Staking Platform",
-//     description: "Decentralized finance platform for staking tokens with yield farming capabilities.",
-//     technologies: ["React", "Solidity", "Hardhat", "Ethers.js"],
-//     category: "Blockchain",
-//     image: "https://images.unsplash.com/photo-1621761191319-c6fb62004040?w=800&h=600&fit=crop",
-//     liveUrl: "#",
-//     githubUrl: "#"
-//   },
-//   {
-//     id: 6,
-//     title: "Portfolio Website Design",
-//     description: "Modern and responsive portfolio website design with smooth animations and interactions.",
-//     technologies: ["Figma", "Adobe XD", "Principle"],
-//     category: "Design",
-//     image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&h=600&fit=crop",
-//     liveUrl: "#"
-//   }
+  // {
+  //   id: 5,
+  //   title: "DeFi Staking Platform",
+  //   description: "Decentralized finance platform for staking tokens with yield farming capabilities.",
+  //   technologies: ["React", "Solidity", "Hardhat", "Ethers.js"],
+  //   category: "Blockchain",
+  //   image: "https://images.unsplash.com/photo-1621761191319-c6fb62004040?w=800&h=600&fit=crop",
+  //   liveUrl: "#",
+  //   githubUrl: "#"
+  // },
+  // {
+  //   id: 6,
+  //   title: "Portfolio Website Design",
+  //   description: "Modern and responsive portfolio website design with smooth animations and interactions.",
+  //   technologies: ["Figma", "Adobe XD", "Principle"],
+  //   category: "Design",
+  //   image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&h=600&fit=crop",
+  //   liveUrl: "#"
+  // }
 ];
 
 const categories = ["All", "Frontend", "Blockchain", "Design"];
