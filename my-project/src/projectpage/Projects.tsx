@@ -10,6 +10,7 @@ import project2 from '../assets/project2.jpg'
 import project3 from '../assets/project3.jpg'
 import project4 from '../assets/project4.jpg'
 import project5 from '../assets/project5.jpg'
+import project6 from '../assets/project6.jpg'
 
 interface Project {
   id: number;
@@ -58,9 +59,25 @@ const projects: Project[] = [
   liveUrl: "https://at-sify.vercel.app/",
   githubUrl: "https://github.com/Idraezy/ATSify",
   },
-
+    {
+  id: 3,
+  title: "Landing Page Generator",
+  description:
+    "AI-powered landing page generator that allows users to quickly create responsive, modern landing pages with customizable themes, animations, and real-time preview.",
+  technologies: [
+    "Figma",
+    "React",
+    "TypeScript",
+    "Tailwind CSS",
+    "Framer Motion"
+  ],
+  category: "Frontend",
+  image: project6,
+  liveUrl: "https://landing-page-generator-taupe.vercel.app/",
+  githubUrl: "https://github.com/Idraezy/Landing-Page-Generator"
+},
   {
-    id: 3,
+    id: 4,
     title: "NFT Marketplace",
     description: "Decentralized marketplace for trading NFTs with smart contract integration and wallet connectivity.",
     technologies: ["Figma", "React","Typescript","Tailwind CSS", "Solidity", "Framer-motion"],
@@ -70,7 +87,7 @@ const projects: Project[] = [
     githubUrl: "https://github.com/Idraezy/NFT-MARKETPLACE-22"
   },
   {
-    id: 4,
+    id: 5,
     title: "Brand Identity Design",
     description: "Complete brand identity package including logo, color palette, and marketing materials.",
     technologies: ["Figma", "HTML", "Vanilla CSS", "Vanilla JavaScript"],
@@ -79,7 +96,7 @@ const projects: Project[] = [
     liveUrl: "#"
   },
   {
-    id: 5,
+    id: 6,
     title: "Task Management App",
     description: "Collaborative task management application with real-time updates and team features.",
     technologies: ["Figma", "HTML", "Vanilla CSS", "Vanilla JavaScript"],
@@ -178,7 +195,7 @@ export default function Projects({ darkMode, setDarkMode }: ContactProps) {
                 className={`px-6 py-2 rounded-full font-semibold transition-all duration-300 ${
                   selectedCategory === category
                     ? 'bg-orange-400 text-white border-2 border-orange-400'
-                    : 'bg-transparent border-2 border-[#111827] dark:border-orange-400 text-black dark:text-orange-400 hover:bg-orange-400 hover:text-white hover:border-orange-400'
+                    : 'bg-transparent border-2 border-[#111827] dark:border-orange-400 text-black dark:text-orange-400 hover:bg-orange-400 hover:text-white hover:border-orange-400 dark:hover:text-white'
                 }`}
               >
                 {category}
