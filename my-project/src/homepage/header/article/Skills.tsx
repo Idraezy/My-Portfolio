@@ -12,12 +12,12 @@ function Skills() {
         viewport={{ once: true, amount: 0.3 }}
         className="p-5 text-center lg:text-left"
       >
-        <p className="text-2xl font-bold sm:text-3xl md:text-4xl lg:text-4xl">
+        <p className="text-2xl font-bold sm:text-3xl md:text-4xl lg:text-4xl flex justify-center pb-5">
           My Arsenal{" "}
           <CircleCheckBig size={30} className="inline text-green-500" />
         </p>
 
-        <p className="mt-3 font-medium text-black dark:text-orange-500 text-lg sm:text-2xl md:text-3xl">
+        <p className="mt-3 font-medium text-black dark:text-orange-500 text-lg sm:text-2xl md:text-3xl flex justify-center">
           Tech Stack
         </p>
         <hr className="mt-2 border-black dark:border-white" />

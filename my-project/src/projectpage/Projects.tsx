@@ -1,10 +1,6 @@
-
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ExternalLink, Github, Filter } from 'lucide-react';
-// import { section } from 'framer-motion';
-// import { div } from 'framer-motion/client';
-import Header from '../homepage/header/Header';
 import project1 from '../assets/project1.jpg'
 import project2 from '../assets/project2.jpg'
 import project3 from '../assets/project3.jpg'
@@ -22,10 +18,6 @@ interface Project {
   liveUrl?: string;
   githubUrl?: string;
 }
-interface ContactProps {
-  darkMode: boolean;
-  setDarkMode: React.Dispatch<React.SetStateAction<boolean>>;
-}
 
 const projects: Project[] = [
   {
@@ -39,43 +31,25 @@ const projects: Project[] = [
     githubUrl: "https://github.com/Idraezy/dali"
   },
   {
-  id: 2,
-  title: "ATS Pro - Resume & ATS Checker",
-  description: "A full-featured frontend application that analyzes resumes against job descriptions, calculates ATS scores, identifies missing keywords, and provides intelligent suggestions for resume optimization with real-time scoring predictions.",
-  technologies: ["React", "TypeScript", "Tailwind CSS", "Framer Motion", "LocalStorage"],
-  category: "Frontend",
-  image: project5,
-  // features: [
-  //   "ATS Score Analysis (0-100)",
-  //   "Keyword Extraction & Matching",
-  //   "Skills Match Percentage",
-  //   "Keyword Density Analysis",
-  //   "Smart Improvement Suggestions",
-  //   "Resume Score Forecasting",
-  //   "Dark/Light Theme Toggle",
-  //   "Drag-and-Drop File Upload",
-  //   "Download Optimized Resume"
-  //   ],
-  liveUrl: "https://at-sify.vercel.app/",
-  githubUrl: "https://github.com/Idraezy/ATSify",
+    id: 2,
+    title: "ATS Pro - Resume & ATS Checker",
+    description: "A full-featured frontend application that analyzes resumes against job descriptions, calculates ATS scores, identifies missing keywords, and provides intelligent suggestions for resume optimization with real-time scoring predictions.",
+    technologies: ["React", "TypeScript", "Tailwind CSS", "Framer Motion", "LocalStorage"],
+    category: "Frontend",
+    image: project5,
+    liveUrl: "https://at-sify.vercel.app/",
+    githubUrl: "https://github.com/Idraezy/ATSify",
   },
-    {
-  id: 3,
-  title: "Landing Page Generator",
-  description:
-    "AI-powered landing page generator that allows users to quickly create responsive, modern landing pages with customizable themes, animations, and real-time preview.",
-  technologies: [
-    "Figma",
-    "React",
-    "TypeScript",
-    "Tailwind CSS",
-    "Framer Motion"
-  ],
-  category: "Frontend",
-  image: project6,
-  liveUrl: "https://landing-page-generator-taupe.vercel.app/",
-  githubUrl: "https://github.com/Idraezy/Landing-Page-Generator"
-},
+  {
+    id: 3,
+    title: "Landing Page Generator",
+    description: "AI-powered landing page generator that allows users to quickly create responsive, modern landing pages with customizable themes, animations, and real-time preview.",
+    technologies: ["Figma", "React", "TypeScript", "Tailwind CSS", "Framer Motion"],
+    category: "Frontend",
+    image: project6,
+    liveUrl: "https://landing-page-generator-taupe.vercel.app/",
+    githubUrl: "https://github.com/Idraezy/Landing-Page-Generator"
+  },
   {
     id: 4,
     title: "NFT Marketplace",
@@ -105,30 +79,11 @@ const projects: Project[] = [
     liveUrl: "https://idraezy.github.io/profile-card/",
     githubUrl: "https://idraezy.github.io/profile-card/"
   },
-  // {
-  //   id: 5,
-  //   title: "DeFi Staking Platform",
-  //   description: "Decentralized finance platform for staking tokens with yield farming capabilities.",
-  //   technologies: ["React", "Solidity", "Hardhat", "Ethers.js"],
-  //   category: "Blockchain",
-  //   image: "https://images.unsplash.com/photo-1621761191319-c6fb62004040?w=800&h=600&fit=crop",
-  //   liveUrl: "#",
-  //   githubUrl: "#"
-  // },
-  // {
-  //   id: 6,
-  //   title: "Portfolio Website Design",
-  //   description: "Modern and responsive portfolio website design with smooth animations and interactions.",
-  //   technologies: ["Figma", "Adobe XD", "Principle"],
-  //   category: "Design",
-  //   image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&h=600&fit=crop",
-  //   liveUrl: "#"
-  // }
 ];
 
 const categories = ["All", "Frontend", "Blockchain", "Design"];
 
-export default function Projects({ darkMode, setDarkMode }: ContactProps) {
+export default function Projects() {
   const [selectedCategory, setSelectedCategory] = useState("All");
 
   const filteredProjects = selectedCategory === "All" 
@@ -157,9 +112,7 @@ export default function Projects({ darkMode, setDarkMode }: ContactProps) {
   };
 
   return (
-    <div>
-     <Header darkMode={darkMode} setDarkMode={setDarkMode} />
-     <section className="min-h-screen bg-lightBg dark:bg-[#011C2A] text-lightText dark:text-darkText transition-colors duration-300 pt-24 md:pt-28 lg:pt-32 pb-16">
+    <section className="min-h-screen bg-lightBg dark:bg-[#011C2A] text-lightText dark:text-darkText transition-colors duration-300 pt-24 md:pt-28 lg:pt-32 pb-16">
       <div className="mx-6 sm:mx-10 md:mx-14 lg:mx-20">
         {/* Header */}
         <motion.div
@@ -172,7 +125,7 @@ export default function Projects({ darkMode, setDarkMode }: ContactProps) {
             My Projects
           </h1>
           <p className="text-base sm:text-lg md:text-xl text-black dark:text-white font-semibold">
-            A collection of my recent work in frontend development, blockchain, and design.
+            A collection of my recent work in Frontend development, Blockchain, and Design.
           </p>
         </motion.div>
 
@@ -297,6 +250,5 @@ export default function Projects({ darkMode, setDarkMode }: ContactProps) {
         )}
       </div>
     </section>
-    </div>
   );
 }

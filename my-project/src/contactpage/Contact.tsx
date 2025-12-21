@@ -1,6 +1,4 @@
 import { useState, type ChangeEvent } from 'react';
-import FinalFooter from '../homepage/header/footer/FinalFooter';
-import Header from '../homepage/header/Header';
 import { Mail, MapPin, PhoneCall, UserRound, MessageSquare } from 'lucide-react';
 import React from 'react';
 
@@ -10,12 +8,7 @@ interface FormData {
   message: string;
 }
 
-interface ContactProps {
-  darkMode: boolean;
-  setDarkMode: React.Dispatch<React.SetStateAction<boolean>>;
-}
-
-function Contact({ darkMode, setDarkMode }: ContactProps) {
+function Contact() {
   const [formData, setFormData] = useState<FormData>({
     name: "",
     email: "",
@@ -54,9 +47,8 @@ You have a new message from your website:
   };
 
   return (
-    <div>
-      <Header darkMode={darkMode} setDarkMode={setDarkMode} />
-      <div className="mt-24 px-6 sm:mt-28 md:mt-32 lg:mt-36 lg:px-20 mb-20">
+    <section className="min-h-screen bg-lightBg dark:bg-[#011C2A] text-lightText dark:text-darkText transition-colors duration-300 pt-24 md:pt-28 lg:pt-32 pb-16">
+      <div className="mx-6 sm:mx-10 md:mx-14 lg:mx-20">
         <div className="text-base sm:text-lg font-semibold text-black dark:text-white">
           Hi <span className="inline-block animate-wave origin-bottom-left">✋</span>
         </div>
@@ -139,9 +131,7 @@ You have a new message from your website:
           </div>
         </div>
       </div>
-      <hr className="border-black border-1 dark:border-white p-5" />
-      <FinalFooter />
-    </div>
+    </section>
   );
 }
 

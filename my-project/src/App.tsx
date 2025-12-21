@@ -1,4 +1,3 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import { useState, useEffect } from 'react';
 import { AnimatePresence } from "framer-motion";
@@ -15,7 +14,6 @@ import PersonalInfo from './homepage/header/article/PersonalInfo';
 import Experience from './homepage/header/article/Experience';
 import Skills from './homepage/header/article/Skills';
 import Projects from './projectpage/Projects';
-import ScrollToTop from './settings/scrollToTop';
 
 function App() {
   const [darkMode, setDarkMode] = useState(true);
@@ -35,56 +33,63 @@ function App() {
   }, []);
 
   return (
-    <Router>
-       <ScrollToTop />
-      <div className="relative flex flex-col min-h-screen bg-[#F9F9F9] dark:bg-[#011C2A]
+    <div className="relative flex flex-col min-h-screen bg-[#F9F9F9] dark:bg-[#011C2A]
       text-lightText dark:text-darkText transition-colors duration-300">
 
-        {/* 🔥 Background Animation */}
-        <BackgroundAnimation />
+      {/* 🔥 Background Animation */}
+      <BackgroundAnimation />
 
-        <AnimatePresence>
-          {loading ? (
-            <Preloader key="loader" />
-          ) : (
-            <Routes>
-              {/* 🏠 Home route */}
-              <Route
-                path="/"
-                element={
-                  <div key="homepage">
-                    <Header darkMode={darkMode} setDarkMode={setDarkMode} />
-                    <main>
-                      <Section />
-                      <Footer />
-                      <Article />
-                      <Routes>
-                      <Route path="/personal" element={<PersonalInfo />} />
-                      <Route path="/skills" element={<Skills  />} />
-                      <Route path="/experience" element={<Experience   />} />
-                      </Routes>
-                      
-                      <Conclusion />
-                    </main>
-                    <FinalFooter />
-                  </div>
-                }
-              />
+      <AnimatePresence>
+        {loading ? (
+          <Preloader key="loader" />
+        ) : (
+          <div key="content">
+            <Header darkMode={darkMode} setDarkMode={setDarkMode} />
+            
+            <main className="relative z-10">
+              {/* Home Section */}
+              <section id="home" className="min-h-screen">
+                <Section />
+                <Footer />
+              </section>
 
-              {/* 📞 Contact route - NOW WITH DARK MODE PROPS */}
-              <Route 
-                path="/contact" 
-                element={<Contact darkMode={darkMode} setDarkMode={setDarkMode} />} 
-              />
-              <Route 
-                path="/projects" 
-                element={<Projects darkMode={darkMode} setDarkMode={setDarkMode} />} 
-              />
-            </Routes>
-          )}
-        </AnimatePresence>
-      </div>
-    </Router>
+              {/* About Section */}
+              <section id="about" className="min-h-screen">
+                <Article />
+                <PersonalInfo />
+              </section>
+
+              {/* Skills Section */}
+              <section id="skills" className="min-h-screen">
+                <Skills />
+              </section>
+
+              {/* Experience Section */}
+              <section id="experience" className="min-h-screen">
+                <Experience />
+              </section>
+
+              {/* Projects Section */}
+              <section id="projects" className="min-h-screen">
+                <Projects />
+              </section>
+
+              {/* Contact Section */}
+              <section id="contact" className="min-h-screen">
+                <Contact />
+              </section>
+
+              {/* Conclusion */}
+              <section id="conclusion">
+                <Conclusion />
+              </section>
+            </main>
+
+            <FinalFooter />
+          </div>
+        )}
+      </AnimatePresence>
+    </div>
   );
 }
 

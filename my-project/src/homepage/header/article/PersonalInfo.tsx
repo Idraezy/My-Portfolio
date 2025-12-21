@@ -4,7 +4,7 @@ import prof from "../../../assets/prof.jpg";
 
 function PersonalInfo() {
   return (
-    <div className="w-full mt-10 overflow-hidden">
+    <div className="w-full  overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center gap-8 sm:flex-col md:flex-col lg:flex-row lg:justify-between lg:items-start">
           

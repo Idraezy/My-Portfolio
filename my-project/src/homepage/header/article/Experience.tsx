@@ -7,12 +7,12 @@ function Experience() {
     <div className="w-full mt-10">
       {/* Header */}
       <div className="p-5 text-center lg:text-left">
-        <p className="text-2xl font-bold sm:text-3xl md:text-4xl lg:text-4xl">
-          Experience{" "}
-          <BriefcaseBusiness size={30} className="inline text-orange-500 " />
+        <p className="text-2xl font-bold sm:text-3xl md:text-4xl lg:text-4xl flex justify-center pb-4">
+          My Experience{" "} 
+          <BriefcaseBusiness size={50} className=" text-orange-500 " />
         </p>
-        <p className="mt-3 font-medium text-black dark:text-orange-500 text-lg sm:text-2xl md:text-3xl">
-          My Work History
+        <p className="mt-3 font-medium text-black dark:text-orange-500 text-lg sm:text-2xl md:text-3xl flex justify-center">
+          Work History
         </p>
         <hr className="mt-2 border-black dark:border-white" />
       </div>

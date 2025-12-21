@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
 import { Sun, Moon, Grid } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import prof from "../../assets/prof.jpg";
@@ -12,7 +11,7 @@ interface HeaderProps {
 function Header({ darkMode, setDarkMode }: HeaderProps) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [currentTime, setCurrentTime] = useState("");
-  const location = useLocation();
+  const [activeSection, setActiveSection] = useState("home");
 
   // Update current time
   useEffect(() => {
@@ -31,6 +30,37 @@ function Header({ darkMode, setDarkMode }: HeaderProps) {
     const interval = setInterval(updateTime, 1000);
     return () => clearInterval(interval);
   }, []);
+
+  // Track active section on scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = ['home', 'about', 'skills', 'experience', 'projects', 'contact'];
+      const scrollPosition = window.scrollY + 200;
+
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element) {
+          const { offsetTop, offsetHeight } = element;
+          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+            setActiveSection(section);
+            break;
+          }
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Smooth scroll to section
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    setMenuOpen(false);
+  };
 
   return (
     <motion.header
@@ -117,38 +147,71 @@ function Header({ darkMode, setDarkMode }: HeaderProps) {
         transition={{ duration: 0.8, delay: 0.5 }}
         className="hidden md:flex space-x-7 text-base font-medium"
       >
-        <Link
-          to="/"
+        <button
+          onClick={() => scrollToSection('home')}
           className={`cursor-pointer duration-300 transition-colors ${
-            location.pathname === "/"
+            activeSection === "home"
               ? "transition-colors underline decoration-4 decoration-orange-500"
               : "hover:text-orange-300"
           }`}
         >
           Home
-        </Link>
+        </button>
 
-        <Link
-          to="/projects"
+        <button
+          onClick={() => scrollToSection('about')}
           className={`cursor-pointer duration-300 transition-colors ${
-            location.pathname === "/projects"
+            activeSection === "about"
               ? "transition-colors underline decoration-4 decoration-orange-500"
               : "hover:text-orange-300"
           }`}
         >
-          My Projects
-        </Link>
+          About
+        </button>
 
-        <Link
-          to="/contact"
+        <button
+          onClick={() => scrollToSection('skills')}
           className={`cursor-pointer duration-300 transition-colors ${
-            location.pathname === "/contact"
+            activeSection === "skills"
               ? "transition-colors underline decoration-4 decoration-orange-500"
               : "hover:text-orange-300"
           }`}
         >
-          Contact me
-        </Link>
+          Skills
+        </button>
+
+        <button
+          onClick={() => scrollToSection('experience')}
+          className={`cursor-pointer duration-300 transition-colors ${
+            activeSection === "experience"
+              ? "transition-colors underline decoration-4 decoration-orange-500"
+              : "hover:text-orange-300"
+          }`}
+        >
+          Experience
+        </button>
+
+        <button
+          onClick={() => scrollToSection('projects')}
+          className={`cursor-pointer duration-300 transition-colors ${
+            activeSection === "projects"
+              ? "transition-colors underline decoration-4 decoration-orange-500"
+              : "hover:text-orange-300"
+          }`}
+        >
+          Projects
+        </button>
+
+        <button
+          onClick={() => scrollToSection('contact')}
+          className={`cursor-pointer duration-300 transition-colors ${
+            activeSection === "contact"
+              ? "transition-colors underline decoration-4 decoration-orange-500"
+              : "hover:text-orange-300"
+          }`}
+        >
+          Contact
+        </button>
       </motion.nav>
 
       {/* Right-side controls */}
@@ -190,44 +253,65 @@ function Header({ darkMode, setDarkMode }: HeaderProps) {
                        rounded-2xl shadow-lg border dark:border-orange-400 text-black 
                        dark:text-white flex flex-col py-3 w-48 md:hidden z-50"
           >
-            <Link to="/" onClick={() => setMenuOpen(false)}>
-              <motion.div
-                whileHover={{ x: 5, color: "#fb923c" }}
-                className={`px-5 py-2 cursor-pointer text-base ${
-                  location.pathname === "/"
-                    ? "text-orange-400 font-semibold"
-                    : ""
-                }`}
-              >
-                Home
-              </motion.div>
-            </Link>
+            <motion.button
+              onClick={() => scrollToSection('home')}
+              whileHover={{ x: 5, color: "#fb923c" }}
+              className={`px-5 py-2 cursor-pointer text-base text-left ${
+                activeSection === "home" ? "text-orange-400 font-semibold" : ""
+              }`}
+            >
+              Home
+            </motion.button>
 
-            <Link to="/projects" onClick={() => setMenuOpen(false)}>
-              <motion.div
-                whileHover={{ x: 5, color: "#fb923c" }}
-                className={`px-5 py-2 cursor-pointer text-base ${
-                  location.pathname === "/projects"
-                    ? "text-orange-400 font-semibold"
-                    : ""
-                }`}
-              >
-                My Projects
-              </motion.div>
-            </Link>
+            <motion.button
+              onClick={() => scrollToSection('about')}
+              whileHover={{ x: 5, color: "#fb923c" }}
+              className={`px-5 py-2 cursor-pointer text-base text-left ${
+                activeSection === "about" ? "text-orange-400 font-semibold" : ""
+              }`}
+            >
+              About
+            </motion.button>
 
-            <Link to="/contact" onClick={() => setMenuOpen(false)}>
-              <motion.div
-                whileHover={{ x: 5, color: "#fb923c" }}
-                className={`px-5 py-2 cursor-pointer text-base ${
-                  location.pathname === "/contact"
-                    ? "text-orange-400 font-semibold"
-                    : ""
-                }`}
-              >
-                Contact me
-              </motion.div>
-            </Link>
+            <motion.button
+              onClick={() => scrollToSection('skills')}
+              whileHover={{ x: 5, color: "#fb923c" }}
+              className={`px-5 py-2 cursor-pointer text-base text-left ${
+                activeSection === "skills" ? "text-orange-400 font-semibold" : ""
+              }`}
+            >
+              Skills
+            </motion.button>
+
+            <motion.button
+              onClick={() => scrollToSection('experience')}
+              whileHover={{ x: 5, color: "#fb923c" }}
+              className={`px-5 py-2 cursor-pointer text-base text-left ${
+                activeSection === "experience" ? "text-orange-400 font-semibold" : ""
+              }`}
+            >
+              Experience
+            </motion.button>
+
+            <motion.button
+              onClick={() => scrollToSection('projects')}
+              whileHover={{ x: 5, color: "#fb923c" }}
+              className={`px-5 py-2 cursor-pointer text-base text-left ${
+                activeSection === "projects" ? "text-orange-400 font-semibold" : ""
+              }`}
+            >
+              Projects
+            </motion.button>
+
+            <motion.button
+              onClick={() => scrollToSection('contact')}
+              whileHover={{ x: 5, color: "#fb923c" }}
+              className={`px-5 py-2 cursor-pointer text-base text-left ${
+                activeSection === "contact" ? "text-orange-400 font-semibold" : ""
+              }`}
+            >
+              Contact
+            </motion.button>
           </motion.div>
         )}
       </AnimatePresence>

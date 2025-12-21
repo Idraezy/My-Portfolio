@@ -1,9 +1,16 @@
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
 
 function Conclusion() {
   const text1 = "Prepared to turn your ideas into reality?";
   const text2 = "I'm here to help.";
+
+  // Smooth scroll to contact section
+  const scrollToContact = () => {
+    const element = document.getElementById('contact');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
 
   return (
     <div className="flex flex-col items-center justify-center text-center mt-20">
@@ -43,9 +50,8 @@ function Conclusion() {
         ))}
       </motion.p>
 
-
-      <Link to="/contact">
       <motion.button
+        onClick={scrollToContact}
         initial={{ opacity: 0, scale: 0.9 }}
         whileInView={{ opacity: 1, scale: 1 }}
         transition={{ delay: 2.8, duration: 0.5 }}
@@ -56,10 +62,6 @@ function Conclusion() {
       >
         Contact me
       </motion.button>
-      
-      </Link>
-
-      
     </div>
   );
 }

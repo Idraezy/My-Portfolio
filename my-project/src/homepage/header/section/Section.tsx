@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Send, FileUser } from "lucide-react";
 import { motion } from "framer-motion";
-import { Link } from 'react-router-dom';
 
 interface Data {
   profession: string[];
@@ -45,6 +44,14 @@ export default function Section() {
     }, 500);
     return () => clearInterval(cursorInterval);
   }, []);
+
+  // Smooth scroll to contact section
+  const scrollToContact = () => {
+    const element = document.getElementById('contact');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
 
   return (
     <motion.section
@@ -120,7 +127,8 @@ export default function Section() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.3, duration: 0.8 }}
         >
-          <Link to="/contact"><button
+          <button
+            onClick={scrollToContact}
             className="rounded-full border border-[#111827] dark:border-orange-400 dark:text-orange-400 dark:hover:text-white
                        p-2 px-4 cursor-pointer dark:hover:bg-orange-400
                        text-base font-semibold hover:bg-orange-400 hover:text-white hover:border-none dark:hover:border-none
@@ -128,8 +136,6 @@ export default function Section() {
           >
             Contact me <Send className='w-4 inline transition-transform duration-700 ease-in-out group-hover:rotate-45 sm:w-5 lg:w-6 lg:duration-700' />
           </button>
-          </Link>
-          
 
           <button
             className="rounded-full border border-[#111827] dark:border-orange-400 dark:text-orange-400 hover:bg-orange-400 dark:hover:bg-orange-400 
@@ -145,6 +151,3 @@ export default function Section() {
     </motion.section>
   );
 }
-
-
-
